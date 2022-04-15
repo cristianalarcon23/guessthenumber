@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getRandom() {
+            return Math.floor(Math.random() * (100 - 1) + 1);
+        }
+        function guessTheNumber () {
+            const rightNumber = getRandom();
+            console.log(rightNumber);
+            for (let i = 1; i < 20;) {
+                let attempt = prompt("What number am I thinking?");
+                if (attempt < rightNumber) {
+                    console.log(`You are low, guess high, this is your attempt number ${i}`);
+                    i++;
+                }
+                else if (attempt > rightNumber) {
+                    console.log(`You are high, guess low, this is your attempt number ${i}`);
+                    i++;
+                }
+                else if (attempt = rightNumber && i === 1) {
+                    console.log("I will grab you a beer, you made it at first sight!!!!")
+                    i=20;
+                }
+
+                else {
+                    console.log(`You are the fucking master of the sala, bro. You made it!!! I whas thinkg on ${rightNumber}`)
+                    i=20;
+                }
+
+            }
+            return rightNumber;
+        }
+        guessTheNumber();
+    </script>
+</body>
+</html>
