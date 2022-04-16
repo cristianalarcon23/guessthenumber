@@ -14,26 +14,22 @@
         function guessTheNumber () {
             const rightNumber = getRandom();
             console.log(rightNumber);
-            for (let i = 1; i < 20;) {
+            for (let i = 1; i < 20; i++) {
                 let attempt = prompt("What number am I thinking?");
                 if (attempt < rightNumber) {
                     console.log(`You are low, guess high, this is your attempt number ${i}`);
-                    i++;
                 }
                 else if (attempt > rightNumber) {
                     console.log(`You are high, guess low, this is your attempt number ${i}`);
-                    i++;
                 }
                 else if (attempt = rightNumber && i === 1) {
                     console.log("I will grab you a beer, you made it at first sight!!!!")
-                    i=20;
+                    break;
                 }
-
                 else {
-                    console.log(`You are the fucking master of the sala, bro. You made it!!! I whas thinkg on ${rightNumber}`)
-                    i=20;
+                    console.log(`You are the fucking master of the sala, bro. You made it!!! I whas thinking on ${rightNumber}`)
+                    break;
                 }
-
             }
             return rightNumber;
         }
